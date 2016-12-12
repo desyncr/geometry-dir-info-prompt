@@ -8,7 +8,7 @@ geometry_prompt_dir_info_setup() {
 
 # Render directory information (file count, size)
 geometry_prompt_dir_info_render() {
-  echo "::" $(/bin/ls -1 | /usr/bin/wc -l | /bin/sed 's: ::g') files, $(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //')
+  echo "::" $(/bin/ls -1 | /usr/bin/wc -l | sed 's: ::g') files, $(/bin/ls -lah | grep -m 1 total | sed 's/total //')
 }
 
 geometry_plugin_register dir_info
